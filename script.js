@@ -67,7 +67,6 @@ function ready(error, MAP, DATA, LOC) {
             prop_value_multiply[d.Ward] = 0;
         
         percent_value[d.Ward] = prop_value_multiply[d.Ward]/population[d.Ward];
-        console.log(ward_names[d.Ward] + " " + ward_id[d.Ward] + " " + prop_value[d.Ward] + " " + population[d.Ward] + " " + percent_value[d.Ward]);
     });
 
     svg.append("g")
@@ -100,7 +99,7 @@ function ready(error, MAP, DATA, LOC) {
     // @TODO: Format the population values to put commas
     tooltip.classed('hidden', false)
         .attr('style', 'left:' + (mouse[0] + 15) +
-                'px; top:' + (mouse[1] + 40) + 'px')
+                'px; top:' + (mouse[1] + 90) + 'px')
         .html(ward_names[d.properties.name] + ": "+ prop_value[d.properties.name].toLocaleString());
     })
     .on('mouseout', function() {
